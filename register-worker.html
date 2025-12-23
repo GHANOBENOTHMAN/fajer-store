@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="انضم كصاحب مهارة - فجر: اعرض مهاراتك وابدأ العمل الحر.">
+    <title>تسجيل صاحب مهارة - فجر</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- الشعار -->
+            <div class="logo" onclick="window.location.href='index.html'">فجر</div>
+
+            <!-- القائمة -->
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">المنتجات</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">العروض</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">من نحن</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">تواصل معنا</a></li>
+            </ul>
+
+            <!-- البحث وتسجيل الدخول -->
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="بحث" class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="login-btn">تسجيل الدخول</button>
+                <div class="language-dropdown">
+                    <button class="lang-selected" id="currentLang">
+                        <img src="algeria-flag.png" alt="العربية" class="flag-icon-small">
+                        <span class="lang-name-selected">العربية</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <!-- خيارات اللغة -->
+                    <div class="lang-options" id="langOptions">
+                        <button class="lang-option" data-lang="ar">
+                            <img src="algeria-flag.png" alt="العربية" class="flag-icon-small">
+                            <span class="lang-name">العربية</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <img src="uk-flag.png" alt="English" class="flag-icon-small">
+                            <span class="lang-name">English</span>
+                        </button>
+                        <button class="lang-option" data-lang="fr">
+                            <img src="france-flag.png" alt="Français" class="flag-icon-small">
+                            <span class="lang-name">Français</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- قسم التسجيل -->
+    <section class="register-form-section">
+        <div class="container">
+            <div class="form-card">
+                <div class="form-header">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h1>انضم كصاحب مهارة</h1>
+                    <p>اعرض مهاراتك وابدأ رحلتك في العمل الحر مع فجر</p>
+                </div>
+
+                <form class="register-form" id="workerRegisterForm">
+                    <!-- الخطوة 1: المعلومات الشخصية -->
+                    <div class="form-step active" id="step-1">
+                        <div class="form-row" style="display: flex; gap: 15px;">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="firstname">الاسم</label>
+                                <input type="text" id="firstname" placeholder="الاسم الأول">
+                                <span class="error-message">الاسم مطلوب</span>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="lastname">اللقب</label>
+                                <input type="text" id="lastname" placeholder="اسم العائلة">
+                                <span class="error-message">اللقب مطلوب</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <div class="phone-input-group"
+                                style="direction: ltr; display: flex; align-items: center; border: 2px solid #edeff2; border-radius: 12px; background: #fcfcfd; overflow: hidden;">
+                                <div class="phone-prefix"
+                                    style="background: #edeff2; padding: 0 15px; height: 100%; display: flex; align-items: center; gap: 5px; font-weight: 700; color: #2c3e50;">
+                                    <img src="algeria-flag.png" alt="DZ" style="width: 20px; border-radius: 2px;">
+                                    <span>+213</span>
+                                </div>
+                                <input type="tel" id="phone" placeholder="5xx xx xx xx"
+                                    style="border: none; box-shadow: none; background: transparent; height: 100%; padding: 14px;">
+                            </div>
+                            <span class="error-message" style="text-align: right; display: none; width: 100%;">يرجى
+                                إدخال
+                                رقم هاتف جزائري صحيح</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" placeholder="example@email.com">
+                            <span class="error-message">يرجى إدخال بريد إلكتروني صحيح</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">كلمة المرور</label>
+                            <input type="password" id="password" placeholder="أدخل كلمة المرور">
+                            <span class="error-message">كلمة المرور مطلوبة (6 أحرف على الأقل)</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password">تأكيد كلمة المرور</label>
+                            <input type="password" id="confirm-password" placeholder="أعد إدخال كلمة المرور">
+                            <span class="error-message">كلمات المرور غير متطابقة</span>
+                        </div>
+
+                        <button type="button" class="submit-btn" id="nextBtn">
+                            <span class="btn-text">التالي</span>
+                        </button>
+                    </div>
+
+                    <!-- الخطوة 2: اختيار المهارات -->
+                    <div class="form-step" id="step-2" style="display: none;">
+                        <h3 class="step-title">اختر المهارات التي تتقنها</h3>
+                        <p class="step-subtitle">يمكنك اختيار أكثر من مهارة في نفس الوقت</p>
+
+                        <div class="skills-accordion" id="skillsAccordion">
+                            <!-- 1. قسم التشييد والبناء -->
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>🏗️ قسم التشييد والبناء</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <h4 class="skill-subsection-title">الهيكلة الإنشائية</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مقاول بناء عام"> مقاول بناء عام</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مهندس موقع وإنشاءات"> مهندس موقع وإنشاءات</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل طوبار">
+                                        عامل طوبار (فحص خشب)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل خرسانة وحديد"> عامل خرسانة وحديد تسليح</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills" value="عامل هدم">
+                                        عامل هدم وإزالة مباني</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل رفع مواد"> عامل رفع مواد (ونش)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل أساسات وحفر"> عامل أساسات وحفر</label>
+
+                                    <h4 class="skill-subsection-title">التشطيب الخارجي</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل واجهات مباني"> عامل واجهات مباني</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل تركيب حجر طبيعي"> عامل تركيب حجر طبيعي</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل تركيب ألواح خرسانية"> عامل تركيب ألواح خرسانية مسبقة</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني عزل واجهات"> فني عزل واجهات</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب كسوة ألمنيوم"> فني تركيب كسوة ألمنيوم</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل تركيب زجاج واجهات"> عامل تركيب زجاج واجهات</label>
+                                </div>
+                            </div>
+
+                            <!-- 2. قسم التشطيب الداخلي -->
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>🎨 قسم التشطيب الداخلي</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <h4 class="skill-subsection-title">أعمال اللياسة والجدران</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="لياس محترف">
+                                        لياس محترف (تبييض)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل جبس بورد"> عامل جبس بورد (Drywall)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني كورنيش وزخارف"> فني كورنيش وزخارف جبسية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني دهان وديكورات"> فني دهان وديكورات طلاء</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني دهان تأثيرات خاصة"> فني دهان تأثيرات خاصة (Texture)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب ورق جدران"> فني تركيب ورق جدران</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني ترميم شقوق"> فني ترميم شقوق وجدران</label>
+
+                                    <h4 class="skill-subsection-title">أعمال الأرضيات</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب سيراميك"> فني تركيب سيراميك وبورسلان</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب رخام"> فني تركيب رخام وجرانيت</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب باركيه"> فني تركيب باركيه خشبي</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب أرضيات فينيل"> فني تركيب أرضيات فينيل (PVC)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب أرضيات إبوكسي"> فني تركيب أرضيات إبوكسي</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب عشب صناعي"> فني تركيب عشب صناعي</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تلميع وتجليخ"> فني تلميع وتجليخ أرضيات</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب أرضيات مطاطية"> فني تركيب أرضيات مطاطية</label>
+
+                                    <h4 class="skill-subsection-title">أعمال الأسقف</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني ديكورات سقف"> فني ديكورات سقف جبسية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب أسقف معلقة"> فني تركيب أسقف معلقة</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب إضاءة مخفية"> فني تركيب إضاءة مخفية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب مراوح سقف"> فني تركيب مراوح سقف</label>
+                                </div>
+                            </div>
+
+                            <!-- 3. قسم النجارة والخشب -->
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>🔩 قسم النجارة والخشب</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <h4 class="skill-subsection-title">نجارة البناء</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="نجار أبواب خشبية"> نجار أبواب خشبية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="نجار شبابيك وأطر"> نجار شبابيك وأطر خشبية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="نجار سلالم خشبية"> نجار سلالم خشبية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="نجار ديكورات خشبية"> نجار ديكورات خشبية جدارية</label>
+
+                                    <h4 class="skill-subsection-title">نجارة الأثاث والديكور</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="صانع أثاث مخصص"> صانع أثاث مخصص (Custom)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="نجار مطابخ خشبية"> نجار مطابخ خشبية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="نجار خزائن ودواليب"> نجار خزائن ودواليب</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="صانع تحف خشبية"> صانع تحف خشبية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني ترميم أثاث"> فني ترميم أثاث قديم</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="نجار أرضيات باركيه"> نجار أرضيات باركيه</label>
+
+                                    <h4 class="skill-subsection-title">أعمال الخشب المتخصصة</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="حفار ونقاش خشب"> حفار ونقاش خشب</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="صانع إطارات ومرايا"> صانع إطارات ومرايا خشبية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب أرفف"> فني تركيب أرفف وخزائن</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تشطيب خشب"> فني تشطيب خشب (صنفرة، طلاء)</label>
+                                </div>
+                            </div>
+
+                            <!-- 4. قسم الحدادة والمعادن -->
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>⚙️ قسم الحدادة والمعادن</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <h4 class="skill-subsection-title">حدادة البناء</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="حداد أبواب حديد"> حداد أبواب حديد خارجية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="حداد شبابيك حديدية"> حداد شبابيك حديدية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="حداد درابزين وسلالم"> حداد درابزين وسلالم</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="حداد أسوار وبوابات"> حداد أسوار وبوابات</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب هياكل معدنية"> فني تركيب هياكل معدنية</label>
+
+                                    <h4 class="skill-subsection-title">أعمال المعادن الديكورية</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="حداد فيرفورجيه"> حداد فيرفورجيه وزخارف</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="صانع أثاث معدني"> صانع أثاث معدني</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني ديكورات ستانلس"> فني ديكورات ستانلس ستيل</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تشكيل نحاس"> فني تشكيل نحاس وألمنيوم</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تلبيس معادن"> فني تلبيس معادن (Gold plating)</label>
+
+                                    <h4 class="skill-subsection-title">الألمنيوم والزجاج</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب أبواب ألمنيوم"> فني تركيب أبواب ألمنيوم</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب نوافذ ألمنيوم"> فني تركيب نوافذ ألمنيوم</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب كرانيش"> فني تركيب كرانيش ومظلات</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills" value="زجاج">
+                                        زجاج
+                                        (فني تركيب زجاج)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب مرايا"> فني تركيب مرايا وديكورات زجاجية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني زجاج ملون"> فني زجاج ملون ومعشق</label>
+                                </div>
+                            </div>
+
+                            <!-- 5. قسم الكهرباء والإلكترونيات -->
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>🔌 قسم الكهرباء والإلكترونيات</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <h4 class="skill-subsection-title">التمديدات الكهربائية</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="كهربائي إنارة منزلية"> كهربائي إنارة منزلية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="كهربائي تمديدات قوية"> كهربائي تمديدات قوية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني لوحات توزيع"> فني لوحات توزيع كهرباء</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني أرضيات ساخنة"> فني أرضيات ساخنة (Heated floors)</label>
+
+                                    <h4 class="skill-subsection-title">أنظمة ذكية وأمنية</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني أنظمة منزل ذكي"> فني أنظمة منزل ذكي (Smart Home)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني كاميرات مراقبة"> فني كاميرات مراقبة</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني أنظمة إنذار حريق"> فني أنظمة إنذار حريق</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني أنظمة إنذار سرقة"> فني أنظمة إنذار سرقة</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني أنترلوك وبوابات"> فني أنترلوك وبوابات كهربائية</label>
+
+                                    <h4 class="skill-subsection-title">الطاقة البديلة</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب ألواح طاقة"> فني تركيب ألواح طاقة شمسية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني أنظمة طاقة احتياطية"> فني أنظمة طاقة احتياطية
+                                        (UPS/Generator)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني شواحن سيارات"> فني شواحن سيارات كهربائية</label>
+                                </div>
+                            </div>
+
+                            <!-- 6. قسم السباكة والتمديدات -->
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>🚰 قسم السباكة والتمديدات</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <h4 class="skill-subsection-title">السباكة الأساسية</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="سباك مواسير وأنابيب"> سباك مواسير وأنابيب</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب سخانات"> فني تركيب سخانات مياه</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني مضخات مياه"> فني مضخات مياه وضغط</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني صرف صحي">
+                                        فني صرف صحي</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني خطوط غاز">
+                                        فني خطوط غاز</label>
+
+                                    <h4 class="skill-subsection-title">أعمال السباكة المتقدمة</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب جاكوزي"> فني تركيب جاكوزي وساونا</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب أحواض سباحة"> فني تركيب أحواض سباحة</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني أنظمة ري حدائق"> فني أنظمة ري حدائق</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب فلاتر مياه"> فني تركيب فلاتر مياه</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني أنظمة مكافحة حريق"> فني أنظمة مكافحة حريق</label>
+                                </div>
+                            </div>
+
+                            <!-- 7. قسم الحدائق والمساحات الخارجية -->
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>🌿 قسم الحدائق والمساحات الخارجية</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <h4 class="skill-subsection-title">تنسيق الحدائق</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مهندس تنسيق حدائق"> مهندس تنسيق حدائق</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل زراعة نباتات"> عامل زراعة نباتات وأشجار</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب عشب"> فني تركيب عشب صناعي/طبيعي</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني أنظمة ري حديثة"> فني أنظمة ري حديثة</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني إضاءة حدائق"> فني إضاءة حدائق</label>
+
+                                    <h4 class="skill-subsection-title">أعمال خارجية</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب مظلات"> فني تركيب مظلات وسواتر</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني بناء جدران طبيعية"> فني بناء جدران طبيعية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تركيب أرضيات خارجية"> فني تركيب أرضيات خارجية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني شلالات ونوافير"> فني شلالات ونوافير</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني صيانة مسابح"> فني صيانة مسابح</label>
+                                </div>
+                            </div>
+
+                            <!-- 8. قسم الحرف الفنية والتخصصية -->
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>🎭 قسم الحرف الفنية والتخصصية</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <h4 class="skill-subsection-title">الحرف التقليدية</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="خطاط وزخارف عربية"> خطاط وزخارف عربية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="نحات خشب/حجر">
+                                        نحات خشب/حجر/رخام</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="صانع فسيفساء">
+                                        صانع فسيفساء</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="حرفي مشغولات نحاسية"> حرفي مشغولات نحاسية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="صانع تحف وهدايا"> صانع تحف وهدايا تراثية</label>
+
+                                    <h4 class="skill-subsection-title">أعمال الترميم</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني ترميم مباني"> فني ترميم مباني تراثية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني ترميم أثاث قديم"> فني ترميم أثاث قديم</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني ترميم تحف فنية"> فني ترميم تحف فنية</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني ترميم واجهات"> فني ترميم واجهات تاريخية</label>
+                                </div>
+                            </div>
+
+                            <!-- 9. قسم الخدمات المساندة -->
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>📦 قسم الخدمات المساندة</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <h4 class="skill-subsection-title">النقل والرفع</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مقاول نقل أثاث"> مقاول نقل أثاث</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="عامل رفع مواد متخصصة"> عامل رفع مواد (معدات متخصصة)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني تفكيك وتركيب أثاث"> فني تفكيك وتركيب أثاث</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="خدمة تنظيف بعد البناء"> خدمة تنظيف بعد البناء</label>
+
+                                    <h4 class="skill-subsection-title">القياسات والاستشارات</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مساح معتمد">
+                                        مساح معتمد (مقاييس أراضي)</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مراقب جودة بناء"> مراقب جودة بناء</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مستشار تراخيص بناء"> مستشار تراخيص بناء</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="فني فحوصات السلامة"> فني فحوصات السلامة</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مرشد مشتريات مواد"> مرشد مشتريات مواد بناء</label>
+
+                                    <h4 class="skill-subsection-title">الإدارة والمتابعة</h4>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مدير مشروع بناء"> مدير مشروع بناء</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مشرف موقع">
+                                        مشرف موقع</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="منسق مقاولين">
+                                        منسق مقاولين</label>
+                                    <label class="skill-checkbox"><input type="checkbox" name="skills"
+                                            value="مراقب تكاليف">
+                                        مراقب تكاليف وميزانية</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="skillsError" class="error-message" style="display:none; margin-bottom: 15px;">يرجى
+                            اختيار مهارة واحدة على الأقل</div>
+
+                        <div class="form-buttons" style="display: flex; gap: 10px;">
+                            <button type="button" class="btn btn-outline" id="backBtn" style="flex: 1;">عودة</button>
+                            <button type="submit" class="submit-btn" id="submitBtn" style="flex: 2;">
+                                <span class="btn-text">إنشاء حساب</span>
+                                <i class="fas fa-spinner fa-spin" style="display: none; margin-right: 8px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="form-footer">
+                    لديك حساب بالفعل؟ <a href="login.html">سجل الدخول</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">معلوماتنا</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="footer-link">السياسة</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="footer-link">تواصل معنا</a>
+                </div>
+
+                <div class="social-media">
+                    <a href="#" class="social-icon telegram"><i class="fas fa-paper-plane"></i></a>
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                جميع الحقوق محفوظة © 2025 فجر - متجرك الإلكتروني
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

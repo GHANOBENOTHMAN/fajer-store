@@ -1,0 +1,103 @@
+/* ========== إشعارات وتنبيهات (Notifications) ========== */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    min-width: 300px;
+    border: 1px solid #eee;
+}
+
+.toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.toast-success .toast-icon {
+    background: #10B981;
+    /* Green */
+}
+
+.toast-error .toast-icon {
+    background: #EF4444;
+    /* Red */
+}
+
+.toast-content {
+    flex: 1;
+}
+
+.toast-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--dark-navy);
+    margin-bottom: 2px;
+}
+
+.toast-message {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* حالات الخطأ في النموذج */
+.form-group.error input {
+    border-color: #EF4444 !important;
+    background-color: #FEF2F2 !important;
+}
+
+.error-message {
+    color: #EF4444;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+    font-weight: 600;
+}
+
+.form-group.error .error-message {
+    display: block;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10px,
+    30px,
+    50px,
+    70px,
+    90px {
+        transform: translateX(-5px);
+    }
+
+    20px,
+    40px,
+    60px,
+    80px {
+        transform: translateX(5px);
+    }
+}

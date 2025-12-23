@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="فجر - متجرك الإلكتروني المتكامل للموضة والمنتجات المنزلية والإلكترونيات والمواد الغذائية">
+    <title>فجر - متجرك الإلكتروني</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- الشعار -->
+            <div class="logo">فجر</div>
+
+            <!-- القائمة -->
+            <ul class="nav-menu">
+                <li class="nav-item active"><a href="#" class="nav-link">الرئيسية</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">المنتجات</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">العروض</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">من نحن</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">تواصل معنا</a></li>
+            </ul>
+
+            <!-- البحث وتسجيل الدخول -->
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="بحث" class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="login-btn">تسجيل الدخول</button>
+                <div class="language-dropdown">
+                    <button class="lang-selected" id="currentLang">
+                        <img src="algeria-flag.png" alt="العربية" class="flag-icon-small">
+                        <span class="lang-name-selected">العربية</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="lang-options" id="langOptions">
+                        <button class="lang-option" data-lang="ar">
+                            <img src="algeria-flag.png" alt="العربية" class="flag-icon-small">
+                            <span class="lang-name">العربية</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <img src="uk-flag.png" alt="English" class="flag-icon-small">
+                            <span class="lang-name">English</span>
+                        </button>
+                        <button class="lang-option" data-lang="fr">
+                            <img src="france-flag.png" alt="Français" class="flag-icon-small">
+                            <span class="lang-name">Français</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero-section">
+        <div class="container">
+            <!-- العنوان الرئيسي -->
+            <div class="hero-title-section">
+                <h1 class="hero-main-title">السوق الرقمي الأول في الجزائر</h1>
+                <div class="hero-title-decoration"></div>
+            </div>
+
+            <!-- زر سجل الآن -->
+            <div class="cta-section">
+                <a href="register.html" class="register-btn" style="text-decoration: none; display: inline-block;">
+                    سجل الآن ◄
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">ما نقدمه في فجر</h2>
+
+            <div class="features-grid">
+                <!-- الميزة الأولى -->
+                <div class="feature-card premium-card">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-store feature-icon"></i>
+                    </div>
+                    <h3 class="feature-title">حول متجرك التقليدي إلى إمبراطورية رقمية</h3>
+                    <p class="feature-desc">
+                        لا تقيد عملك بجدران المحل! منصتنا تمنحك متجراً إلكترونياً متكاملاً في دقائق، بدون خبرة تقنية.
+                        وسّع دائرة عملائك خارج حدود مدينتك، واجعل متجرك مفتوحاً 24 ساعة، 7 أيام في الأسبوع.
+                        ابدأ ببيع منتجاتك للعالم بدلاً من الانتظار داخل جدران محلك.
+                    </p>
+                </div>
+
+                <!-- الميزة الثانية -->
+                <div class="feature-card premium-card">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-briefcase feature-icon"></i>
+                    </div>
+                    <h3 class="feature-title">سوق المواهب: مهاراتك هي سلعتك الأغلى</h3>
+                    <p class="feature-desc">
+                        لماذا تبحث عن وظيفة بينما يمكن للوظيفة أن تجدك؟ اعرض مهاراتك في سوق العمل المحلي،
+                        واجعل أرباب العمل يتنافسون على خبراتك. سواء كنت محترفاً في مجال التقنية، الحرف اليدوية،
+                        أو أي مهارة أخرى، نوفر لك منصة احترافية لعرض قدراتك وإيجاد مصادر دخل متنوعة.
+                    </p>
+                </div>
+
+                <!-- الميزة الثالثة -->
+                <div class="feature-card premium-card">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-hand-holding-heart feature-icon"></i>
+                    </div>
+                    <h3 class="feature-title">تسوق ذكي يدعم اقتصاد بلدك من الداخل</h3>
+                    <p class="feature-desc">
+                        اكتشف أفضل المنتجات والخدمات من أصحاب متاجر حقيقيين في مدينتك، وادعم الاقتصاد المحلي.
+                        تسوق بثقة مع نظام تقييمات ومراجعات حقيقية من جيرانك. اشتري بذكاء، ووفر وقتك وجهودك
+                        في البحث عن الأفضل.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">معلوماتنا</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="footer-link">السياسة</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="footer-link">تواصل معنا</a>
+                </div>
+
+                <div class="social-media">
+                    <a href="#" class="social-icon telegram"><i class="fas fa-paper-plane"></i></a>
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                جميع الحقوق محفوظة © 2025 فجر - متجرك الإلكتروني
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

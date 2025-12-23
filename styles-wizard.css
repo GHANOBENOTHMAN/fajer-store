@@ -1,0 +1,124 @@
+/* أنماط النموذج متعدد الخطوات */
+.form-step {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step-title {
+    font-size: 1.2rem;
+    color: var(--dark-navy);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.step-subtitle {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* نمط الأكورديون (Accordion) */
+.skills-accordion {
+    margin-bottom: 25px;
+    border: 1px solid #edeff2;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #edeff2;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: var(--dark-navy);
+    transition: all 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: #f1f5f9;
+}
+
+.accordion-header.active {
+    background: #e0f2fe;
+    /* Light blue tint */
+    color: #0369a1;
+}
+
+.accordion-header i {
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active i {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px 20px;
+    background: white;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accordion-content.open {
+    display: flex;
+}
+
+/* مربعات الاختيار المخصصة */
+.skill-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.skill-checkbox:hover {
+    background: #f8fafc;
+}
+
+.skill-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-orange);
+    cursor: pointer;
+}
+
+/* عناوين الأقسام الفرعية في المهارات */
+.skill-subsection-title {
+    font-size: 0.95rem;
+    color: var(--dark-navy);
+    margin: 15px 0 8px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #e2e8f0;
+    font-weight: 700;
+}
+
+.skill-subsection-title:first-child {
+    margin-top: 0;
+}

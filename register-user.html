@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="إنشاء حساب جديد - فجر: انضم إلينا لتجربة تسوق فريدة.">
+    <title>إنشاء حساب مستخدم - فجر</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- الشعار -->
+            <div class="logo" onclick="window.location.href='index.html'">فجر</div>
+
+            <!-- القائمة -->
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">المنتجات</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">العروض</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">من نحن</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">تواصل معنا</a></li>
+            </ul>
+
+            <!-- البحث وتسجيل الدخول -->
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="بحث" class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="login-btn">تسجيل الدخول</button>
+                <div class="language-dropdown">
+                    <button class="lang-selected" id="currentLang">
+                        <img src="algeria-flag.png" alt="العربية" class="flag-icon-small">
+                        <span class="lang-name-selected">العربية</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <!-- خيارات اللغة -->
+                    <div class="lang-options" id="langOptions">
+                        <button class="lang-option" data-lang="ar">
+                            <img src="algeria-flag.png" alt="العربية" class="flag-icon-small">
+                            <span class="lang-name">العربية</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <img src="uk-flag.png" alt="English" class="flag-icon-small">
+                            <span class="lang-name">English</span>
+                        </button>
+                        <button class="lang-option" data-lang="fr">
+                            <img src="france-flag.png" alt="Français" class="flag-icon-small">
+                            <span class="lang-name">Français</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- قسم التسجيل -->
+    <section class="register-form-section">
+        <div class="container">
+            <div class="form-card">
+                <div class="form-header">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h1>إنشاء حساب مستخدم</h1>
+                    <p>سجل الآن واستمتع بتجربة تسوق مميزة في متجر فجر</p>
+                </div>
+
+                <form class="register-form" id="userRegisterForm">
+                    <div class="form-row" style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="firstname">الاسم</label>
+                            <input type="text" id="firstname" placeholder="الاسم الأول">
+                            <span class="error-message">الاسم مطلوب</span>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="lastname">اللقب</label>
+                            <input type="text" id="lastname" placeholder="اسم العائلة">
+                            <span class="error-message">اللقب مطلوب</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <div class="phone-input-group"
+                            style="direction: ltr; display: flex; align-items: center; border: 2px solid #edeff2; border-radius: 12px; background: #fcfcfd; overflow: hidden;">
+                            <div class="phone-prefix"
+                                style="background: #edeff2; padding: 0 15px; height: 100%; display: flex; align-items: center; gap: 5px; font-weight: 700; color: #2c3e50;">
+                                <img src="algeria-flag.png" alt="DZ" style="width: 20px; border-radius: 2px;">
+                                <span>+213</span>
+                            </div>
+                            <input type="tel" id="phone" placeholder="5xx xx xx xx"
+                                style="border: none; box-shadow: none; background: transparent; height: 100%; padding: 14px;">
+                        </div>
+                        <span class="error-message" style="text-align: right; display: none; width: 100%;">يرجى إدخال
+                            رقم هاتف جزائري صحيح</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" placeholder="example@email.com">
+                        <span class="error-message">يرجى إدخال بريد إلكتروني صحيح</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">كلمة المرور</label>
+                        <input type="password" id="password" placeholder="أدخل كلمة المرور">
+                        <span class="error-message">كلمة المرور مطلوبة (6 أحرف على الأقل)</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">تأكيد كلمة المرور</label>
+                        <input type="password" id="confirm-password" placeholder="أعد إدخال كلمة المرور">
+                        <span class="error-message">كلمات المرور غير متطابقة</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">إنشاء حساب</span>
+                        <i class="fas fa-spinner fa-spin" style="display: none; margin-right: 8px;"></i>
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    لديك حساب بالفعل؟ <a href="login.html">سجل الدخول</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">معلوماتنا</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="footer-link">السياسة</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="footer-link">تواصل معنا</a>
+                </div>
+
+                <div class="social-media">
+                    <a href="#" class="social-icon telegram"><i class="fas fa-paper-plane"></i></a>
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                جميع الحقوق محفوظة © 2025 فجر - متجرك الإلكتروني
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

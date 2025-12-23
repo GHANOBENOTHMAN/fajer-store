@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="من نحن - فجر: السوق الرقمي الأول في الجزائر الذي يربط التجار والموظفين والمشترين.">
+    <title>من نحن - فجر</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- الشعار -->
+            <div class="logo" onclick="window.location.href='index.html'">فجر</div>
+
+            <!-- القائمة -->
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">المنتجات</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">العروض</a></li>
+                <li class="nav-item active"><a href="about.html" class="nav-link">من نحن</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">تواصل معنا</a></li>
+            </ul>
+
+            <!-- البحث وتسجيل الدخول -->
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="بحث" class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="login-btn">تسجيل الدخول</button>
+                <div class="language-dropdown">
+                    <button class="lang-selected" id="currentLang">
+                        <img src="algeria-flag.png" alt="العربية" class="flag-icon-small">
+                        <span class="lang-name-selected">العربية</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="lang-options" id="langOptions">
+                        <button class="lang-option" data-lang="ar">
+                            <img src="algeria-flag.png" alt="العربية" class="flag-icon-small">
+                            <span class="lang-name">العربية</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <img src="uk-flag.png" alt="English" class="flag-icon-small">
+                            <span class="lang-name">English</span>
+                        </button>
+                        <button class="lang-option" data-lang="fr">
+                            <img src="france-flag.png" alt="Français" class="flag-icon-small">
+                            <span class="lang-name">Français</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. البطل (Hero Section) -->
+    <section class="about-hero-section">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1 class="about-hero-title">سوق الجزائر الرقمي: اقتصاد بلدك يبدأ من هنا</h1>
+                <p class="about-hero-subtitle">منصة شاملة تربط التجار، الموظفين، والمشترين في مجتمع رقمي واحد.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. مهمتنا (Our Mission) -->
+    <section class="mission-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title-small">مهمتنا</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="mission-content text-center">
+                <p class="lead-text">
+                    مهمتنا هي تمكين الاقتصاد المحلي من خلال التحول الرقمي. نساعد التجار على توسيع نطاق أعمالهم، ونسهل
+                    للأفراد إيجاد فرص عمل ذات معنى، ونوفر للمجتمع وسيلة تسوق ذكية تدعم منتجات وخدمات بلدهم.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. رؤيتنا (Our Vision) -->
+    <section class="vision-section section-padding bg-light">
+        <div class="container">
+            <div class="vision-wrapper">
+                <div class="vision-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="vision-text">
+                    <h2 class="section-title-small">رؤيتنا</h2>
+                    <p class="lead-text">
+                        أن نكون المنصة الرقمية الأولى التي يُحدثها أبناء البلد لأنفسهم، لبناء اقتصاد قوي ومستقل، تكون
+                        عوائده محفوظة داخل مجتمعنا.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ماذا نقدم؟ (Our Services) -->
+    <section class="services-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title-small">ماذا نقدم؟</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="services-grid">
+                <!-- للمتاجر والتجار -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>للمتاجر والتجار</h3>
+                    <p>نحول متجرك التقليدي إلى متجر إلكتروني متكامل، لزيادة مبيعاتك ووصولك.</p>
+                </div>
+
+                <!-- لأصحاب المهارات -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>لأصحاب المهارات</h3>
+                    <p>نقدم سوقًا لعرض مهاراتك وإيجاد فرص عمل حقيقية أو مشاريع جانبية.</p>
+                </div>
+
+                <!-- للمتسوقين -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>للمتسوقين</h3>
+                    <p>نوفر تجربة تسوق آمنة وسهلة، للاكتشاف وشراء أفضل المنتجات المحلية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. قيمنا (Our Values) -->
+    <section class="values-section section-padding bg-dark text-white">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title-small text-white">قيمنا</h2>
+                <div class="title-underline bg-white"></div>
+            </div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>الثقة</h3>
+                    <p>نربط أفراد المجتمع ببعضهم في بيئة موثوقة.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3>الدعم المحلي</h3>
+                    <p>نؤمن بأن تنمية المجتمع تبدأ من دعم بعضنا البعض.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>الابتكار</h3>
+                    <p>نسعى دائمًا لتقديم حلول بسيطة لتحديات حقيقية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. دعوة للعمل (Call to Action) -->
+    <section class="cta-full-section section-padding">
+        <div class="container text-center">
+            <h2 class="cta-title">انضم إلى مجتمعنا النامي اليوم!</h2>
+            <div class="cta-buttons-group">
+                <button class="btn btn-primary">أنشئ متجرك</button>
+                <a href="register-worker.html" class="btn btn-secondary" style="text-decoration: none;">اعرض مهاراتك</a>
+                <a href="register-user.html" class="btn btn-outline" style="text-decoration: none;">تصفح السوق</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">معلوماتنا</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="footer-link">السياسة</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="footer-link">تواصل معنا</a>
+                </div>
+
+                <div class="social-media">
+                    <a href="#" class="social-icon telegram"><i class="fas fa-paper-plane"></i></a>
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                جميع الحقوق محفوظة © 2025 فجر - متجرك الإلكتروني
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

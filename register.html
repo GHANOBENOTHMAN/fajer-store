@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سجل في فجر - اختر نوع حسابك: إنشاء متجر، عرض مهارات، أو تصفح السوق.">
+    <title>تسجيل حساب جديد - فجر</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- الشعار -->
+            <div class="logo" onclick="window.location.href='index.html'">فجر</div>
+
+            <!-- القائمة -->
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">المنتجات</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">العروض</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">من نحن</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">تواصل معنا</a></li>
+            </ul>
+
+            <!-- البحث وتسجيل الدخول -->
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="بحث" class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="login-btn">تسجيل الدخول</button>
+                <div class="language-dropdown">
+                    <button class="lang-selected" id="currentLang">
+                        <img src="algeria-flag.png" alt="العربية" class="flag-icon-small">
+                        <span class="lang-name-selected">العربية</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="lang-options" id="langOptions">
+                        <button class="lang-option" data-lang="ar">
+                            <img src="algeria-flag.png" alt="العربية" class="flag-icon-small">
+                            <span class="lang-name">العربية</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <img src="uk-flag.png" alt="English" class="flag-icon-small">
+                            <span class="lang-name">English</span>
+                        </button>
+                        <button class="lang-option" data-lang="fr">
+                            <img src="france-flag.png" alt="Français" class="flag-icon-small">
+                            <span class="lang-name">Français</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- قسم اختيار نوع الحساب -->
+    <section class="register-selection-section">
+        <div class="container">
+            <h1 class="page-title text-center">انضم إلى مجتمع فجر</h1>
+            <p class="page-subtitle text-center">اختر الطريقة التي تريد أن تبدأ بها رحلتك معنا</p>
+
+            <div class="register-options-grid">
+                <!-- خيار 1: تصفح السوق -->
+                <div class="register-option-card">
+                    <div class="option-icon-wrapper">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h2 class="option-title">تصفح السوق</h2>
+                    <p class="option-desc">استكشف آلاف المنتجات المحلية والعالمية، وتسوق بسهولة وأمان في أكبر سوق رقمي
+                        بالجزائر.</p>
+                    <a href="register-user.html" class="option-btn"
+                        style="text-decoration: none; display: inline-block; text-align: center;">ابدأ بالتسوق</a>
+                </div>
+
+                <!-- خيار 2: اعرض مهاراتك -->
+                <div class="register-option-card">
+                    <div class="option-icon-wrapper">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h2 class="option-title">اعرض مهاراتك</h2>
+                    <p class="option-desc">هل لديك مهارة؟ انضم إلى سوق العمل الحر واعرض خدماتك على أصحاب المشاريع
+                        والشركات.</p>
+                    <a href="register-worker.html" class="option-btn"
+                        style="text-decoration: none; display: inline-block; text-align: center;">سجل كمستقل</a>
+                </div>
+
+                <!-- خيار 3: أنشئ متجرك -->
+                <div class="register-option-card featured-option">
+                    <div class="option-icon-wrapper">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h2 class="option-title">أنشئ متجرك</h2>
+                    <p class="option-desc">ابدأ تجارتك الإلكترونية الآن! أنشئ متجرك الخاص في دقائق وقم ببيع منتجاتك
+                        للجميع.</p>
+                    <button class="option-btn primary-btn">ابدأ البيع الآن</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">معلوماتنا</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="footer-link">السياسة</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="footer-link">تواصل معنا</a>
+                </div>
+
+                <div class="social-media">
+                    <a href="#" class="social-icon telegram"><i class="fas fa-paper-plane"></i></a>
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                جميع الحقوق محفوظة © 2025 فجر - متجرك الإلكتروني
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
