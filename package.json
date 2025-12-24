@@ -1,0 +1,8 @@
+{
+  "name": "fajer-store",
+  "version": "1.0.0",
+  "description": "Fajer Store - E-commerce and Worker Registration",
+  "dependencies": {
+    "pg": "^8.11.3"
+  }
+}
